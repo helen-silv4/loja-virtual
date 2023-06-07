@@ -1,0 +1,15 @@
+- Criar o Banco de Dados no MySql;
+
+- Se sua conexão for local, instalar o Xampp;
+
+- Após a instalação, no Disco Local C do seu computador dentro da pasta "xampp" colocar o arquivo dentro da pasta htdocs (C:\xampp\htdocs);
+
+- Verificar se os dados da conexão estão corretos de acordo com o seu banco (Arquivo conexao.php);
+
+- Para que consiga receber mensagens em seu gmail, ativar o acesso de apps menos seguros (https://myaccount.google.com/u/0/lesssecureapps?pli=1);
+
+- Alterar os dados do gmail caso "esqueci minha senha" (Arquivo enviaremail.php);
+
+- Pode-se logar com um usuário já cadastrado no banco ou cadastrar-se;
+
+- Quando cadastrar um produto colocar o nome e a descrição entre a tag <p></p>.
