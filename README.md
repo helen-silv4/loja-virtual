@@ -16,6 +16,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML, CSS e JS
 - Php
-- Boostrap
-- MySql
+- Bootstrap
+- MySql 
 - Git e Github
