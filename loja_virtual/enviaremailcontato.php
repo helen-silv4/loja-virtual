@@ -1,5 +1,4 @@
 <?php
-
 	include 'conexao.php';
 
 	$nome = $_POST['nomeContato'];
@@ -10,12 +9,11 @@
 	
 	$exibe = $consulta->fetch(PDO::FETCH_ASSOC);
 
-	if($consulta ->rowCount() == 1){
+	if($consulta ->rowCount() == 1) {
 		header('location:erro4.php');
 	}
-	else{
+	else {
 		$incluir = $cn->query("insert into tbl_form values (Default, '$nome', '$email', '$descricao');");
 		header('location:ok2.php');
 	}
-
 ?>

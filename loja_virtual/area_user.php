@@ -4,35 +4,28 @@
     <meta charset="utf-8">
     <title>Cello Games | Área Usuário</title>
     <link href="img/icone2.ico" rel="sortcut icon"/>
-    <!--Responsividade-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- Imagens Rodapé-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
         .navbar{
             margin-bottom: 0;
         }
         
         #busca{
-                height: 30px;
-                margin-top: 7px;
+			height: 30px;
+			margin-top: 7px;
         }
     </style> 	
 </head>
 <body>	
-	
 	<?php
-	
 		session_start();
 
 		if(empty($_SESSION['ID'])){ 
-            header('location:formlogin.php'); // enviando para formlogon.php
+            header('location:formlogin.php');
         } 
 		
 		include 'conexao.php';	
@@ -46,7 +39,9 @@
 	
 	<div class="container-fluid">
 		<div class="row" style="margin-top: 15px;">
-			<b><h3 class="text-center">Minhas Compras</h3></b>
+			<strong>
+				<h3 class="text-center">Minhas Compras</h3>
+			</strong>
 		</div>
 		<div class="col-sm-10 col-sm-offset-1">
 	    	<div class="row" style="margin-top: 15px;">
@@ -76,6 +71,5 @@
 	<?php
 		include 'rodape.html';
 	?>
-	
 </body>
 </html>

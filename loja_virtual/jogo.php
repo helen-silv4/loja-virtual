@@ -4,16 +4,11 @@
 	<meta charset="utf-8">
 	<title>Cello Games | Jogos</title>
 	<link href="img/icone2.ico" rel="sortcut icon"/>
-	<!--Responsividade-->
-	<meta name="viewport" content="widht=device-widht,initial-scale=1"> 
-	<!-- CSS -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- JavaScript compilado-->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- Imagens Rodapé-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		.navbar {
 			margin-bottom: 0;
@@ -27,27 +22,26 @@
 </head>
 <body>
 	<?php 
-
 		session_start();
 		include 'conexao.php';
 		include 'nav.php';
 		include 'cabecalho.html'; 
 		
 		$cat= $_GET['cat'];
-		//variável $consulta vai receber variável $cn que receberá o resultado de uma query 
 		$consulta = $cn->query("select cod_produto,nome_produto,valor_preco,descricao_capa, qtd_estoque from view_produto where descricao_categoria_produto = '$cat'");
 	?>
-	
-	<br/>
+	<br>
 	<div class="container-fluid">
 		<div class="row">
 				<?php while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)){ ?>
 					<div class="col-sm-3">
 						<img src="img/<?php echo $exibe['descricao_capa']; ?>" class="img-responsive" style="width: 100%"/>
 						<div>
-							<h4><b><?php echo mb_strimwidth($exibe['nome_produto'],0,25,'...'); ?></b></h4> 
-							<!--depois de 30 caracteres vai ser mostrado na tela '...'-->
+							<h4>
+								<strong><?php echo mb_strimwidth($exibe['nome_produto'],0,25,'...'); ?></strong>
+							</h4> 
 						</div>
+
 						<div>
 							<h6>R$ <?php echo number_format($exibe['valor_preco'],2,',','.'); ?></h6>
 						</div>
@@ -75,9 +69,8 @@
 						</div>
 					</div>
 				<?php } ?>
-		</div> <!--Fechamento da class row-->
-	</div> <!--Fechamento do container fluid-->
-
+		</div>
+	</div> 
 	<?php
 		include 'rodape.html'; 
 	?>

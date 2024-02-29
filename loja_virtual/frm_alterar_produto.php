@@ -4,20 +4,13 @@
 	<meta charset="utf-8">
 	<title>Cello Games | Alteração Produto</title>
 	<link href="img/icone2.ico" rel="sortcut icon"/>
-	<!--Responsividade-->	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- Máscara -->
-	<script src="jquery.mask.js"></script>
-	<!-- Imagens Rodapé-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="jquery.mask.js"></script>
 	<script>		
-		/* mscara para o preço */	
 		$(document).ready(function(){
 			$('#preco').mask('000.000.000.000.000,00', {reverse: true});	
 		});
@@ -35,15 +28,11 @@
 </head>
 <body>
 	<?php
-	
 		session_start();	
-		
-		// se a sessão id estiver vazia ou se a sessão status for diferente de adm entao execute
 		if(empty($_SESSION['Status']) || $_SESSION['Status'] != 1){
-				header('location:index.php');  // redireciona para página index.php
+				header('location:index.php'); 
 		}
 		
-		// recuperando os ids que foram enviados pela lista_produto.php
 		$cd = $_GET['id']; // id do produto
 		$cd2 = $_GET['id2']; // id categoria 
 		$cd3 = $_GET['id3']; // id desenvolvedor
@@ -61,7 +50,6 @@
 		$consultaDesenvolvedor = $cn->query("SELECT cod_desenvolvedor, nome_desenvolvedor FROM tbl_desenvolvedor where cod_desenvolvedor ='$cd3' union select cod_desenvolvedor, nome_desenvolvedor FROM tbl_desenvolvedor where cod_desenvolvedor !='$cd3'");
 
 		$consultaFornecedor = $cn->query("SELECT cod_fornecedor, nome_fornecedor FROM tbl_fornecedor where cod_fornecedor ='$cd4' union select cod_fornecedor, nome_fornecedor FROM tbl_fornecedor where cod_fornecedor !='$cd4'");
-	
 	?>
 	
 	<div class="container-fluid">
@@ -134,7 +122,7 @@
 					<div class="form-group">
 						<label for="sltlanc">Lançamento?</label>
 						<select class="form-control" name="sltlanc">					  				
-							<!-- se o sg_lancamento == S este valor estará selecionado senão vazio -->
+							<!-- se o sg_lancamento == S este valor estará selecionado, senão vazio -->
 							<option value="S" <?=($exibe['sg_lancamento'] == 'S')?'selected':''?>>Sim</option>	<option value="N" <?=($exibe['sg_lancamento'] == 'N')?'selected':''?>>Não</option>	  
 						</select>
 					</div>
@@ -146,11 +134,9 @@
 			</div>
 		</div>
 	</div>
-
 	<br><br><br>
 	<?php 
 		include 'rodape.html' 
 	?>
-	
 </body>
 </html>

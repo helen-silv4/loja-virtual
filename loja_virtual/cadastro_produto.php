@@ -4,16 +4,11 @@
 	<meta charset="utf-8">
 	<title>Cello Games | Cadastro</title>
 	<link href="img/icone2.ico" rel="sortcut icon"/>
-	<!--Responsividade-->	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- Imagens Rodapé-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		.navbar{
 			margin-bottom: 0;
@@ -27,18 +22,15 @@
 </head>
 <body>
 	<?php
-	
 		session_start();
 		
-		//Se a sessção "Status" estiver vazia ou diferente de 1 (não admin), redirecionar para a página index.php
-		if(empty($_SESSION['Status']) || $_SESSION['Status'] != 1){
+		if(empty($_SESSION['Status']) || $_SESSION['Status'] != 1) {
 			header('location:index.php');
 		}
 
 		include 'conexao.php';	
 		include 'nav.php';
 		include 'cabecalho.html';
-	
 	?>
 	
 	<div class="container-fluid">
@@ -80,6 +72,5 @@
 	<?php 
 		include 'rodape.html' 
 	?>
-	
 </body>
 </html>

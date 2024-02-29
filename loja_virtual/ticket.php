@@ -4,16 +4,11 @@
     <meta charset="utf-8">
     <title>Cello Games | Ticket</title>
     <link href="img/icone2.ico" rel="sortcut icon"/>
-    <!--Responsividade-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- Imagens Rodapé-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
         .navbar{
             margin-bottom: 0;
@@ -27,7 +22,6 @@
 </head>
 <body>	
 	<?php
-	
 		session_start();
 		
 		if (empty($_SESSION['ID'])) {
@@ -38,12 +32,8 @@
 		include 'nav.php';
 		include 'cabecalho.html';
 		
-		//jogando na variavel $ticket_compra o ticket recebido pelo parametro
 		$ticket_compra=$_GET['ticket'];
-		
-		//Criando select pelo ticket recebido que foi armazenado na variavel $ticket_compra
 		$consulta_venda = $cn->query("SELECT * FROM view_Venda WHERE numero_ticket='$ticket_compra'");
-	
 	?>
 	
 	<div class="container-fluid">
@@ -64,11 +54,9 @@
 		                </tr>
 	                </thead>
 					<?php
-
-						$total=0; // criando variavel chamado total								
+						$total=0;								
 						while ($exibeVenda=$consulta_venda->fetch(PDO::FETCH_ASSOC)) {		
 						$total += $exibeVenda['valor_total_item'];
-					
 					?>
 					<tbody>
 	                    <th scope="row"><?php echo date('d/m/Y', strtotime($exibeVenda['data_venda']));?></th> <!--Convertendo a data para o formato brasileiro-->
@@ -94,6 +82,5 @@
 	<?php
 		include 'rodape.html';
 	?>
-	
 </body>
 </html>

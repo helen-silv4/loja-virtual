@@ -4,17 +4,12 @@
 	<meta charset="utf-8">
 	<title>Cello Games | Contato</title>
 	<link href="img/icone2.ico" rel="sortcut icon"/>
-	<!--Responsividade-->
 	<meta name="viewport" content="widht=device-widht,initial-scale=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- jQuery Jogo -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- JavaScript compilado-->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- Imagens Rodapé-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		.navbar {
 			margin-bottom: 0;
@@ -28,7 +23,6 @@
 </head>
 <body>
 	<?php 
-	
 		session_start();
 		include 'conexao.php';
 		include 'nav.php';
@@ -37,7 +31,9 @@
 	?>
 
 	<div class="container-fluid">
-		<h2 class="text-center"><b>Entre em Contato</b></h2>
+		<h2 class="text-center">
+			<strong>Entre em Contato</strong>
+		</h2>
 		<div class="row">
 			<div class="col-sm-5 col-sm-offset-1"> 
 				 <img src="img/contact.png" class="img-responsive" style="width:100%;">
@@ -45,7 +41,7 @@
 				
 	 		<div class="col-sm-5">
 				<form method="post" action="enviaremailcontato.php" name="conta">
-					<br/><br/>
+					<br><br>
 					<div class="form-group">
 						<label for="nomeContato">Nome</label>
 						<input name="nomeContato" type="text" class="form-control" required id="nomeContato">
@@ -70,9 +66,7 @@
 	</div>	
 
 	<?php 
-
-		include 'rodape.html'
-
+		include 'rodape.html';
 	?>
 </body>
 </html>

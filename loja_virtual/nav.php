@@ -1,6 +1,5 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -10,7 +9,6 @@
       </button>
       <a class="navbar-brand" href="index.php">Cello Games</a>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home<span class="sr-only">(current)</span></a></li>
@@ -61,23 +59,47 @@
       </form>
 
       <ul class="nav navbar-nav navbar-right">  
-        <?php if(empty($_SESSION['ID'])) { ?> <!--Se a sessão ID estiver vazia mostrar apenas "Login"-->
-          <li><a href="formlogin.php"><span class="glyphicon glyphicon-log-in"> Login</span></a></li>
-        <?php } else { //Se a sessão não estiver vazia verificar...
-          if($_SESSION['Status'] == 0) { //Se a sessão status for igual a 0 mostrar o nome do usuário
+        <?php if(empty($_SESSION['ID'])) { ?>
+          <li>
+            <a href="formlogin.php">
+              <span class="glyphicon glyphicon-log-in"> Login</span>
+            </a>
+          </li>
+        <?php } else { 
+          if($_SESSION['Status'] == 0) {
             $consulta_usuario = $cn->query("select nome_usuario from tbl_usuario where cod_usuario = '$_SESSION[ID]'");
             $exibe_usuario = $consulta_usuario->fetch(PDO::FETCH_ASSOC);
             ?>
-            <li><a href="area_user.php"><span class="glyphicon glyphicon-user"> <?php echo $exibe_usuario['nome_usuario'];?></a></li>
-            <li><a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"></a></li>
-            <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</a></li>
-          <?php } else { ?> <!--Se a sessão status for igual a 1 criar o botão "Administrador"-->
-            <li><a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"></a></li>
-            <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</a></li>
-            <li><a href="adm.php"><button class="btn btn-sm btn-success" id="adm">Administrador</button></a></li>  
+            <li>
+              <a href="area_user.php">
+                <span class="glyphicon glyphicon-user"> <?php echo $exibe_usuario['nome_usuario'];?>
+              </a>
+            </li>
+
+            <li>
+              <a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"></a>
+            </li>
+
+            <li>
+              <a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</a>
+            </li>
+          <?php } else { ?>
+            <li>
+              <a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"></a>
+            </li>
+
+            <li>
+              <a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</a>
+            </li>
+
+            <li>
+              <a href="adm.php">
+                <button class="btn btn-sm btn-success" id="adm">Administrador</button>
+              </a>
+            </li>  
         <?php } } ?>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 

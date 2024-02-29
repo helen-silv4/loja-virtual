@@ -4,18 +4,12 @@
 	<meta charset="utf-8">
 	<title>Cello Games | Cadastrar Produtos</title>
 	<link href="img/icone2.ico" rel="sortcut icon"/>
-	<!--Responsividade-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- Máscara -->
-	<script src="jquery.mask.js"></script>
-	<!-- Imagens Rodapé-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="jquery.mask.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#preco').mask('000.000.000.000.000,00', {reverse: true});
@@ -34,10 +28,8 @@
 </head>
 <body>	
 	<?php
-	
 		session_start();
 
-		//Se a sessção "Status" estiver vazia ou diferente de 1 (não admin), redirecionar para a página index.php
 		if(empty($_SESSION['Status']) || $_SESSION['Status'] != 1){
 			header('location:index.php');
 		}
@@ -49,7 +41,6 @@
 		$consultaCategoria = $cn->query("select * from tbl_categoria_produto");
 		$consultaDesenvolvedor = $cn->query("select * from tbl_desenvolvedor");
 		$consultaFornecedor = $cn->query("select * from tbl_fornecedor");
-
 	?>
 	
 	<div class="container-fluid">
@@ -133,6 +124,5 @@
 	<?php 
 		include 'rodape.html' 
 	?>
-	
 </body>
 </html>

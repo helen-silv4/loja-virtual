@@ -4,16 +4,11 @@
     <meta charset="utf-8">
     <title>Cello Games | Vendas</title>
     <link href="img/icone2.ico" rel="sortcut icon"/>
-    <!--Responsividade-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- Imagens Rodapé-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
         .navbar{
             margin-bottom: 0;
@@ -27,7 +22,6 @@
 </head>
 <body>	
 	<?php
-	
 		session_start();
 		
 		if (empty($_SESSION['ID'])) {
@@ -39,7 +33,6 @@
 		include 'cabecalho.html';
 		
 		$consulta_venda = $cn->query("select * from view_venda;");
-
 	?>
 	
 	<div class="container-fluid">
@@ -60,11 +53,9 @@
 		                </tr>
 	                </thead>
 					<?php
-
-						$total=0; // criando variavel chamado total								
+						$total=0; 							
 						while ($exibeVenda=$consulta_venda->fetch(PDO::FETCH_ASSOC)) {		
 						$total += $exibeVenda['valor_total_item'];
-					
 					?>
 					<tbody>
 						<tr>
@@ -81,11 +72,9 @@
         	</div>
      	</div> 
     </div>
-
 	<br><br><br><br><br>
 	<?php
 		include 'rodape.html';
 	?>
-	
 </body>
 </html>

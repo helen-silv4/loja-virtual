@@ -1,8 +1,7 @@
 <?php
-
 	$servidor = "Localhost";
 	$usuario = "root";
-	$senha = "1234567";
+	$senha = "";
 	$banco = "loja_games";
 
 	$cn = new PDO("mysql:host=$servidor;dbname=$banco", $usuario, $senha);
