@@ -45,7 +45,7 @@ create table tbl_produto
     nome_produto varchar(100) not null,
     cod_desenvolvedor int not null,
     cod_fornecedor int not null,
-    valor_preco decimal(10,3) not null,
+    valor_preco decimal(10,2) not null,
     qtd_estoque int not null,
     descricao_produto text not null,
     descricao_capa text not null,
@@ -529,6 +529,7 @@ select * from tbl_desenvolvedor;
 select * from tbl_fornecedor;
 select * from tbl_usuario;
 select * from tbl_venda;
+select * from tbl_form;
 select * from view_produto;
 select * from view_venda;
 

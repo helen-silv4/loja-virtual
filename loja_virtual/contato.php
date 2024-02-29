@@ -22,13 +22,37 @@
 	</style>
 </head>
 <body>
-	<?php 
-		session_start();
-		include 'conexao.php';
-		include 'nav.php';
-		include 'cabecalho.html'; 
+<?php
+    session_start();
+    include 'conexao.php';
+    include 'nav.php';
+    include 'cabecalho.html';
 
-	?>
+    // Verifica se o formulário foi enviado
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $nomeContato = mysqli_real_escape_string($conexao, $_POST['nomeContato']);
+        $emailContato = mysqli_real_escape_string($conexao, $_POST['emailContato']);
+        $descricaoContato = mysqli_real_escape_string($conexao, $_POST['descricaoContato']);
+
+        // Status 0 para usuário normal (ou qualquer outro valor padrão desejado)
+        $status = 0;
+
+        // Se o usuário estiver logado, atualiza o status
+        if (isset($_SESSION['Status'])) {
+            $status = ($_SESSION['Status'] == 1) ? 1 : 0;
+        }
+
+        // Salvar mensagem no banco de dados
+        $query = "INSERT INTO tbl_form (nome_usuario_form, descricao_email_form, descricao_form, status) VALUES ('$nomeContato', '$emailContato', '$descricaoContato', $status)";
+        mysqli_query($conexao, $query);
+
+        // Redireciona para a página de sucesso
+        header('location:sucesso.php');
+        exit();  // Certifique-se de encerrar a execução do script após o redirecionamento
+    }
+?>
+
+<!-- Restante do seu código HTML do formulário aqui -->
 
 	<div class="container-fluid">
 		<h2 class="text-center">

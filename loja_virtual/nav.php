@@ -59,7 +59,7 @@
       </form>
 
       <ul class="nav navbar-nav navbar-right">  
-        <?php if(empty($_SESSION['ID'])) { ?>
+        <?php if(empty($_SESSION['ID'])) {?>
           <li>
             <a href="formlogin.php">
               <span class="glyphicon glyphicon-log-in"> Login</span>
@@ -68,8 +68,7 @@
         <?php } else { 
           if($_SESSION['Status'] == 0) {
             $consulta_usuario = $cn->query("select nome_usuario from tbl_usuario where cod_usuario = '$_SESSION[ID]'");
-            $exibe_usuario = $consulta_usuario->fetch(PDO::FETCH_ASSOC);
-            ?>
+            $exibe_usuario = $consulta_usuario->fetch(PDO::FETCH_ASSOC);?>
             <li>
               <a href="area_user.php">
                 <span class="glyphicon glyphicon-user"> <?php echo $exibe_usuario['nome_usuario'];?>
@@ -83,7 +82,7 @@
             <li>
               <a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</a>
             </li>
-          <?php } else { ?>
+          <?php } else {?>
             <li>
               <a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"></a>
             </li>
@@ -97,9 +96,8 @@
                 <button class="btn btn-sm btn-success" id="adm">Administrador</button>
               </a>
             </li>  
-        <?php } } ?>
+        <?php } }?>
       </ul>
     </div>
   </div>
 </nav>
-

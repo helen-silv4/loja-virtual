@@ -54,9 +54,11 @@
 				<p>
 					<strong><?php echo $exibe['nome_desenvolvedor'];?></strong>
 				</p>
-				<p>
-					<strong>R$ <?php echo number_format($exibe['valor_preco'],3,',','.'); ?></strong>
-				</p>
+				<div>
+					<?php
+						echo '<h4>R$ ' . $exibe['valor_preco'] . '</h4>';
+					?>
+				</div>
 				<a href="carrinho.php?cod=<?php echo $exibe['cod_produto'];?>">
 					<button class="btn btn-lg btn-success">Comprar</button>
 				</a>

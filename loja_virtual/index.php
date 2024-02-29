@@ -42,7 +42,9 @@
 					</div>
 					
 					<div>
-						<h6>R$ <?php echo number_format($exibe['valor_preco'],2,',','.'); ?></h6>
+						<?php
+							echo '<h5>R$ ' . $exibe['valor_preco'] . '</h5>';
+						?>
 					</div>
 				
 					<div class="text-center">
