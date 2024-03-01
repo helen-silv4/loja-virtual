@@ -1,7 +1,7 @@
 <h1 align="center"> Cello Games </h1>
 
 <p align="center">
-  <img alt="projeto cello games" src="loja_virtual/img/preview.jpg" width="100%">
+  <img alt="projeto cello games" src="loja_virtual/img/preview.png" width="100%">
 </p>
 
 ## 💻 Projeto
@@ -30,3 +30,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Bootstrap
 - MySql 
 - Git e Github
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT.

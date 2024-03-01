@@ -33,7 +33,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<?php while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)){ ?>
-				<div class="col-sm-3">
+				<div class="col-sm-2">
 					<img src="img/<?php echo $exibe['descricao_capa']; ?>" class="img-responsive" style="width: 100%"/>
 					<div>
 						<h4>

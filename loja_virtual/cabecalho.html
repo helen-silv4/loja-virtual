@@ -1,28 +1,358 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-		<li data-target="#myCarousel" data-slide-to="2"></li>
-	</ol>
-	
-	<div class="carousel-inner">
- 	   	<div class="item active">
-	    	<img src="img/slide1.png" style="width:100%" alt="Cello Games">
-    	</div>
-	    <div class="item">
-	      <img src="img/slide2.png" style="width:100%" alt="Cello Games">
-	    </div>
-	    <div class="item">
-	      <img src="img/slide3.png" style="width:100%" alt="Cello Games">
-	    </div>
-	</div>
+<style type="text/css">
+.banner-main {
+    box-sizing: border-box;
+    width: 100%;
+}
 
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-   	    <span class="glyphicon glyphicon-chevron-left"></span>
-	    <span class="sr-only">Anterior</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-	    <span class="glyphicon glyphicon-chevron-right"></span>
-	    <span class="sr-only">Próximo</span>
-	</a>
-</div>
+.carousel-main {
+    width: 100%;
+    height: 400px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    overflow: hidden;
+    background-color: black;
+}
+
+.carousel-viewport {
+    width: 100%;
+    height: 100%;
+}
+.carousel-viewport .slide {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.carousel-viewport .slide.-onScreen {
+    display: flex;   
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+}
+.carousel-viewport .slide.-onScreen.-fromRight {
+    animation: fromRight 0.3s linear;
+    
+}
+.carousel-viewport .slide.-onScreen.-fromLeft {
+    animation: fromLeft 0.3s linear;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.caption-slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(247, 247, 247);
+    font-size:22px;
+    font-weight: 600;
+    font-family: sans-serif;
+    pointer-events: none;
+    text-align: center;
+}
+.nav-slides {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    display: flex;
+    gap: 10px;
+    transform: translateX(-50%);
+    list-style: none;
+}
+
+@keyframes fromRight {
+    from { 
+        position: absolute;
+        right: -30%;
+    } to { 
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+@keyframes fromLeft {
+    from { 
+        position: absolute;
+        left: -30%;
+    } to { 
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.button-arrow {
+    position: absolute;
+    text-indent: -9999px;
+    background-color: transparent;
+    width: 160px;
+    height: 100%;
+    display: flex;
+
+    border: none;
+    background-position: 50%;
+    background-size: 50px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.button-arrow:hover {
+    transform: scale(1.15);
+}
+
+.button-arrow.-left {   
+    left: 0;
+    background-image: url(slides/arrow-left.svg);
+    background-repeat: no-repeat;
+    background-size: 50px;
+}
+
+.button-arrow.-right {
+    right: 0;
+    background-image: url(slides/arrow-right.svg);
+    background-repeat: no-repeat;
+} 
+
+@media screen and (max-width:550px) {
+   .button-arrow {
+    width:90px
+   }
+}
+
+.nav-slides {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    display: flex;
+    gap: 10px;
+    transform: translateX(-50%);
+}
+
+.button-circle {
+    text-indent: -9999px;
+    box-sizing: border-box;
+    
+    background-color: transparent;
+    width:18px;
+    height:18px;
+    border: 3px solid white;
+    border-radius:50%;
+    
+}
+
+.button-circle:hover {
+    background-color: white;
+}
+
+.button-circle.-onScreen {
+    background-color: white;
+}
+
+</style>
+<section class="banner-main">
+	<div class="carousel-main">
+		<button class="button-arrow -left" onclick="previousSlide()">Ir para o slide anterior</button>
+			<ol class="carousel-viewport">
+				<li id="slideOne" class="slide -onScreen">
+					<picture> 
+						<source srcset="slides/slide1px2000.png" media="(min-width:1500px)" >
+						<source srcset="slides/slide1px1500.png" media="(min-width:800px)" >
+						<img class="slideImage" src="slides/slide1px800.png" alt="">
+						<figcaption class="caption-slide">Cello Games<br>Aventure-se em uma experiência incrível!</figcaption>
+					</picture>
+				</li>
+
+				<li id="slideTwo" class="slide">
+					<picture>
+						<source srcset="slides/slide2px2000.png" media="(min-width:1500px)" >
+						<source srcset="slides/slide2px1500.png" media="(min-width:800px)" >
+						<img class="slideImage" src="slides/slide2px800.png" alt="">
+						<figcaption class="caption-slide">Bem-vindo ao seu site!<br>Somos seu parceiro no mundo dos games</figcaption>
+					</picture>    
+				</li>
+
+				<li id="slideThree" class="slide">
+					<picture>
+						<source srcset="slides/slide3px2000.png" media="(min-width:1500px)" >
+						<source srcset="slides/slide3px1500.png" media="(min-width:800px)" >
+						<img class="slideImage" src="slides/slide3px800.png" alt="">
+						<figcaption class="caption-slide">Transprência e satisfação<br>Tudo sob seu controle!</figcaption>
+					</picture>               
+				</li>
+			</ol>
+
+			<ol class="nav-slides">
+				<li id="circleOne" class="button-circle -onScreen" onclick="circleReference(1)">Ir para o slide um.</li>
+				<li id="circleTwo" class="button-circle" onclick="circleReference(2)">Ir para o slide dois.</li>
+				<li id="circleThree" class="button-circle" onclick="circleReference(3)">Ir para o slide três.</li>
+			</ol>
+		<button class="button-arrow -right" onclick="nextSlide()">Ir para o próximo slide</button>
+	</div>
+</section>
+<script>
+	
+
+const slide1 = document.querySelector("#slideOne");
+const slide2 = document.querySelector("#slideTwo");
+const slide3 = document.querySelector("#slideThree");
+
+const circle1 = document.querySelector("#circleOne");
+const circle2 = document.querySelector("#circleTwo");
+const circle3 = document.querySelector("#circleThree");
+
+let slideActual
+let activity = false
+
+async function userActivity() {
+    activity = true
+    setTimeout(() => {
+        activity=false
+    }, 10000)
+}
+
+setInterval( () => {
+    
+    if (activity === false) {
+        checkActualSlide();
+        removeOnScreen();
+
+    if (slideActual === 1) {
+        slide2.classList.add("-onScreen")  
+        slide2.classList.add("-fromRight")
+
+        circle2.classList.add("-onScreen")   
+    } else if (slideActual === 2) {
+        slide3.classList.add("-onScreen")
+        slide3.classList.add("-fromRight")
+
+        circle3.classList.add("-onScreen") 
+    } else if (slideActual === 3) {
+        slide1.classList.add("-onScreen")
+        slide1.classList.add("-fromRight")
+
+        circle1.classList.add("-onScreen") 
+    }
+    }
+}, 8000)
+
+function removeOnScreen() {
+    slide1.classList.remove("-onScreen")
+    slide1.classList.remove("-fromRight")
+    slide1.classList.remove("-fromLeft")
+
+    slide2.classList.remove("-onScreen")
+    slide2.classList.remove("-fromRight")
+    slide2.classList.remove("-fromLeft")
+
+    slide3.classList.remove("-onScreen")
+    slide3.classList.remove("-fromRight")
+    slide3.classList.remove("-fromLeft")
+
+
+    circle1.classList.remove("-onScreen")
+    circle2.classList.remove("-onScreen")
+    circle3.classList.remove("-onScreen")
+}
+
+function nextSlide() {
+    userActivity();
+    checkActualSlide();
+
+    if (slideActual === 1) {
+        removeOnScreen();
+        slide2.classList.add("-onScreen")  
+        slide2.classList.add("-fromRight")
+
+        circle2.classList.add("-onScreen")   
+    } else if (slideActual === 2) {
+        removeOnScreen();
+        slide3.classList.add("-onScreen")
+        slide3.classList.add("-fromRight")
+        
+        circle3.classList.add("-onScreen") 
+    } else if (slideActual === 3) {
+        removeOnScreen();
+        slide1.classList.add("-onScreen")
+        slide1.classList.add("-fromRight")
+
+        circle1.classList.add("-onScreen") 
+    }
+}
+
+function previousSlide() {
+    userActivity();
+    checkActualSlide();
+
+    if (slideActual === 1) {
+        removeOnScreen();
+        slide3.classList.add("-onScreen")   
+        slide3.classList.add("-fromLeft")
+
+        circle3.classList.add("-onScreen")  
+    } else if (slideActual === 2) {
+        removeOnScreen();
+        slide1.classList.add("-onScreen")
+        slide1.classList.add("-fromLeft")
+
+        circle1.classList.add("-onScreen") 
+    } else if (slideActual === 3) {
+        removeOnScreen();
+        slide2.classList.add("-onScreen")
+        slide2.classList.add("-fromLeft")
+
+        circle2.classList.add("-onScreen") 
+    }
+}
+
+function circleReference(slide) {
+    userActivity();
+    checkActualSlide();
+
+    if (slide === 1) {
+        if (slideActual !== 1) {
+            removeOnScreen()
+            slide1.classList.add("-onScreen")
+            slide1.classList.add("-fromRight")
+            circle1.classList.add("-onScreen")
+        }
+    } else if (slide === 2) {
+        if (slideActual !== 2) {
+            removeOnScreen()
+            slide2.classList.add("-onScreen")
+            slide2.classList.add("-fromRight")
+            circle2.classList.add("-onScreen")
+        }
+    } else if (slide === 3) {
+        if (slideActual !== 3) {
+            removeOnScreen()
+            slide3.classList.add("-onScreen")
+            slide3.classList.add("-fromRight")
+            circle3.classList.add("-onScreen")
+        }
+    }
+}
+
+function checkActualSlide() {
+    let slide1On = slide1.classList.contains("-onScreen")
+    let slide2On = slide2.classList.contains("-onScreen")
+    let slide3On = slide3.classList.contains("-onScreen")
+
+    if (slide1On) {
+        slideActual = 1
+    } else if (slide2On) {
+        slideActual = 2
+    } else if (slide3On) {
+        slideActual = 3
+    }
+}
+
+
+
+</script>
