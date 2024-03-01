@@ -29,7 +29,6 @@
 		
 		include 'conexao.php';	
 		include 'nav.php';
-		include 'cabecalho.html';
 		
 		$consulta = $cn->query("SELECT * from tbl_produto");
 	?>
@@ -67,8 +66,5 @@
 		<?php } ?>
 	</div>
 	<br><br><br>
-	<?php
-		include 'rodape.html';
-	?>
 </body>
 </html>

@@ -24,24 +24,19 @@
 	<?php
 		include 'conexao.php';	
 		include 'nav.php';
-		include 'cabecalho.html';
 	?>
 
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4 text-center">
-				<br><br><br><br>
+				<br><br><br>
 				<img src=" img/sucesso.png" alt="sucesso" style="width:100%;">
 				<h2>Usuário Cadastrado com sucesso!!</h2>
 				<a href="formlogin.php" class="btn btn-block btn-info" role="button">Entrar no loja</a>							
 			</div>
 		</div>
 	</div>
-
-	<br><br><br><br>
-	<?php 
-		include 'rodape.html' 
-	?>
+	<br><br><br>
 </body>
 </html>
 

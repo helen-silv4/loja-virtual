@@ -29,14 +29,14 @@
 
 		include 'conexao.php';	
 		include 'nav.php';
-		include 'cabecalho.html';
 	?>
 
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4 text-center">
-				<h2>Área administrativa</h2>
 				<br>
+				<h2>Área administrativa</h2>
+				
 				
 				<a href="frm_cadastrar_produto.php">			
 					<button type="submit" class="btn btn-block btn-lg btn-primary">
@@ -67,10 +67,6 @@
 			</div>
 		</div>
 	</div>
-
-	<br><br><br><br>
-	<?php 
-		include 'rodape.html' 
-	?>	
+	<br><br><br>	
 </body>
 </html>

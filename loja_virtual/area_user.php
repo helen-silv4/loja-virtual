@@ -30,7 +30,6 @@
 		
 		include 'conexao.php';	
 		include 'nav.php';
-		include 'cabecalho.html';
 
 		$cod_usuario = $_SESSION['ID'];
 		$consulta_venda = $cn->query("select * from view_venda where cod_cliente = '$cod_usuario' group by numero_ticket");
@@ -66,10 +65,6 @@
 	    	</div>
     	</div>    
   	</div>
-
-	<br><br><br><br><br>
-	<?php
-		include 'rodape.html';
-	?>
+	<br><br><br>
 </body>
 </html>

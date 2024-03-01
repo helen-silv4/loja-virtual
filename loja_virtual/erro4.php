@@ -24,26 +24,23 @@
 	<?php 
 		session_start();
 		include 'conexao.php';
-		include 'nav.php';
-		include 'cabecalho.html'; 
+		include 'nav.php'; 
 	?>
-		<div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-9 col-lg-12 text-center py-3 w-auto p-3">
-                    <br><br><br>
-                    <img src=" img/erro.png" alt="erro" style="width:30%;">
-                    <h4>Já localizamos este e-mail.<br>Por favor aguarde nosso contato!</h4><br> 
-					<a href="contato.php">
-						<button type="button" class="btn btn-lg btn-primary">
-							<i class="glyphicon glyphicon-repeat"></i> Voltar
-						</button>
-					</a>
-                </div>
-            </div>
-        </div>
-        <br>
-	<?php 
-		include 'rodape.html'
-	?>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-9 col-lg-12 text-center py-3 w-auto p-3">
+				<br><br><br>
+				<img src=" img/erro.png" alt="erro" style="width:30%;">
+				<h4>Já localizamos este e-mail.<br>Por favor aguarde nosso contato!</h4><br> 
+				<a href="contato.php">
+					<button type="button" class="btn btn-lg btn-primary">
+						<i class="glyphicon glyphicon-repeat"></i> Voltar
+					</button>
+				</a>
+			</div>
+		</div>
+	</div>
+	<br><br><br>
 </body>
 </html>

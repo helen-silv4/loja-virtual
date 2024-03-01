@@ -31,12 +31,11 @@
 	<?php
 		include 'conexao.php';	
 		include 'nav.php';
-		include 'cabecalho.html';
 	?>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4">
-				<h2>Cadastro Cliente</h2>
+				<h2 align="center">Cadastro Cliente</h2>
 				<form method="post" action="inserirusuario.php" name="logon">
 					<div class="form-group">
 						<label for="nome">Nome</label>
@@ -75,9 +74,5 @@
 			</div>
 		</div>
 	</div>
-	<br><br>
-	<?php 
-		include 'rodape.html' 
-	?>
 </body>
 </html>

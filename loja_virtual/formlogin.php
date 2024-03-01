@@ -24,7 +24,6 @@
 	<?php
 		include 'conexao.php';	
 		include 'nav.php';
-		include 'cabecalho.html';
 	?>
 	<div class="container-fluid">
 		<div class="row">
@@ -61,10 +60,5 @@
 			</div>
 		</div>
 	</div>
-
-	<br><br><br><br>
-	<?php 
-		include 'rodape.html' 
-	?>
 </body>
 </html>

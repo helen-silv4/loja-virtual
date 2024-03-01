@@ -25,7 +25,6 @@
 		session_start();
 		include 'conexao.php';
 		include 'nav.php';
-		include 'cabecalho.html';
 
 		if (isset($_SESSION['Status']) && ($_SESSION['Status'] == 1 || $_SESSION['Status'] == 0)) {
 	?>
@@ -40,7 +39,6 @@
 			</div>
         </div>
     </div>
-    <br><br><br>
 
 	<?php
 		} else { 
@@ -56,12 +54,9 @@
 			</div>
 		</div>
 	</div>
-    <br><br><br>
 
 	<?php
 		}
-
-		include 'rodape.html';
 	?>
 </body>
 </html>

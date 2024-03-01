@@ -26,7 +26,6 @@
 		
 		include 'conexao.php';	
 		include 'nav.php';
-		include 'cabecalho.html';
 
 		if(empty($_GET['txtbuscar'])){
 			echo "<html><script>location.href='index.php';</script></html>";
@@ -63,10 +62,5 @@
 			</div>		
 		<?php } ?>
 	</div>
-
-	<br><br><br><br><br><br><br><br><br><br>
-	<?php
-		include 'rodape.html';
-	?>
 </body>
 </html>

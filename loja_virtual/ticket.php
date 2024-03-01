@@ -30,7 +30,6 @@
 		
 		include 'conexao.php';	
 		include 'nav.php';
-		include 'cabecalho.html';
 		
 		$ticket_compra=$_GET['ticket'];
 		$consulta_venda = $cn->query("SELECT * FROM view_Venda WHERE numero_ticket='$ticket_compra'");
@@ -77,10 +76,6 @@
 			<h3 class="text-center">Total: R$ <?php echo number_format($total,3,',','.');?></h3>
 		</div>
     </div>
-
-	<br><br><br><br><br>
-	<?php
-		include 'rodape.html';
-	?>
+	<br><br><br>
 </body>
 </html>

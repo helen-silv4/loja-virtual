@@ -40,7 +40,6 @@
 		
 		include 'conexao.php';	
 		include 'nav.php';
-		include 'cabecalho.html';
 		
 		$consulta = $cn->query("SELECT * FROM tbl_produto WHERE cod_produto='$cd'");	
 		$exibe = $consulta->fetch(PDO::FETCH_ASSOC);
@@ -55,7 +54,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4">
-				<h2>Alteração de Produtos</h2>
+				<h2 align="center">Alteração de Produtos</h2>
 				<form method="post" action="alterar_produto.php?cod_altera=<?php echo $cd; ?>" name="incluiProd" enctype="multipart/form-data">
 					<div class="form-group">					
 						<label for="sltcategoria">Categoria</label>
@@ -122,7 +121,6 @@
 					<div class="form-group">
 						<label for="sltlanc">Lançamento?</label>
 						<select class="form-control" name="sltlanc">					  				
-							<!-- se o sg_lancamento == S este valor estará selecionado, senão vazio -->
 							<option value="S" <?=($exibe['sg_lancamento'] == 'S')?'selected':''?>>Sim</option>	<option value="N" <?=($exibe['sg_lancamento'] == 'N')?'selected':''?>>Não</option>	  
 						</select>
 					</div>
@@ -135,8 +133,5 @@
 		</div>
 	</div>
 	<br><br><br>
-	<?php 
-		include 'rodape.html' 
-	?>
 </body>
 </html>

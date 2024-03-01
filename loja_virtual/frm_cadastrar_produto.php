@@ -36,7 +36,6 @@
 
 		include 'conexao.php';	
 		include 'nav.php';
-		include 'cabecalho.html';
 
 		$consultaCategoria = $cn->query("select * from tbl_categoria_produto");
 		$consultaDesenvolvedor = $cn->query("select * from tbl_desenvolvedor");
@@ -46,7 +45,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4">
-				<h2>Inclusão de Produtos</h2>
+				<h2 align="center">Inclusão de Produtos</h2>
 				<form method="post" action="insProduto.php" name="incluiProd" enctype="multipart/form-data">
 					<div class="form-group">					
 						<label for="sltcategoria">Categoria</label>
@@ -119,10 +118,6 @@
 			</div>
 		</div>
 	</div>
-
-	<br><br><br><br>
-	<?php 
-		include 'rodape.html' 
-	?>
+	<br><br><br>
 </body>
 </html>

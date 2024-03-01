@@ -30,7 +30,6 @@
         
         include 'conexao.php';  
         include 'nav.php'; 
-        include 'cabecalho.html';
         
         if (!empty($_GET['cod'])) {
             $cod_prod=$_GET['cod'];
@@ -69,10 +68,6 @@
             <?php } ?>    
         </div>
     </div>
-    
-    <br><br><br><br><br>
-    <?php
-        include 'rodape.html';
-    ?>
+    <br><br><br>
 </body>
 </html>

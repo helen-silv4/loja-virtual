@@ -24,7 +24,6 @@
 	<?php
 		include 'conexao.php';	
 		include 'nav.php';
-		include 'cabecalho.html';
 	?>
 	
 	<div class="container-fluid">
@@ -48,9 +47,5 @@
 			</div>
 		</div>
 	</div>
-	
-	<?php 
-		include 'rodape.html' 
-	?>
 </body>
 </html>

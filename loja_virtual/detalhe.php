@@ -23,7 +23,8 @@
 	<?php
 		session_start();
 		include 'conexao.php';	
-		
+		include 'nav.php';
+
 		if(!empty($_GET['cod'])) { 
 			$cod_produto = $_GET['cod'];
 
@@ -34,14 +35,13 @@
 			header("location:index.php");
 		}
 
-		include 'nav.php';
-		include 'cabecalho.html';
+		
 	?>
 	
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-1">
-				<h2>
+				<h2 align="center">
 					<strong>Detalhes do Produto</strong>
 				</h2>
 				<img src="img/<?php echo $exibe['descricao_capa'];?>" class="img-responsive" style="width:100%;">

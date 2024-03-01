@@ -30,7 +30,6 @@
 		
 		include 'conexao.php';	
 		include 'nav.php';
-		include 'cabecalho.html';
 		
 		$consulta_venda = $cn->query("select * from view_venda;");
 	?>
@@ -72,9 +71,6 @@
         	</div>
      	</div> 
     </div>
-	<br><br><br><br><br>
-	<?php
-		include 'rodape.html';
-	?>
+	<br><br><br>
 </body>
 </html>

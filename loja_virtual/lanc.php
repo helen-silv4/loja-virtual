@@ -24,8 +24,7 @@
 	<?php 
 		session_start();
 		include 'conexao.php';
-		include 'nav.php';
-		include 'cabecalho.html'; 
+		include 'nav.php'; 
 		
 		$consulta = $cn->query('select cod_produto,nome_produto,valor_preco,descricao_capa,qtd_estoque from view_produto where sg_lancamento = "S"');
 	?>
